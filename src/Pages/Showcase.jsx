@@ -12,16 +12,9 @@ import PlayerStats from "./Components/PlayerStats";
 import React, { useState } from "react";
 
 export default function Main() {
-    const [todos] = useState(["Todo 1", "Todo 2", "Todo 3"]);
-
     // Get the components of the showcase page
     return (
         <>
-            <PlayerStats />
-            <Habits todos={todos} />
-            <Dailies />
-            <Todos />
-            <Rewards />
             <div className="bottom-text" style={{ marginBottom: "-290px", backgroundColor: "black", color: "white", padding: "15px" }}>
                 Made by Zain
             </div>
