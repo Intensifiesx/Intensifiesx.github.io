@@ -2,10 +2,6 @@
 // react backend showcase will be
 
 // Import our components
-import Todos from "./Components/Todos";
-import Habits from "./Components/Habits";
-import Dailies from "./Components/Dailies";
-import Rewards from "./Components/Rewards";
 import PlayerStats from "./Components/PlayerStats";
 
 // Import libraries
