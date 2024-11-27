@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.32c9ca58.css",
-    "main.js": "/static/js/main.380c6422.js",
+    "main.css": "/static/css/main.4293a2bc.css",
+    "main.js": "/static/js/main.7ad76343.js",
+    "static/media/Bg.jpg": "/static/media/Bg.146fb64d1464d5f1761e.jpg",
+    "static/media/Zain.png": "/static/media/Zain.3a329f4156d9ae821115.png",
+    "static/media/MetropolisRegular.ttf": "/static/media/MetropolisRegular.3e96c38bc01555998420.ttf",
     "index.html": "/index.html",
-    "main.32c9ca58.css.map": "/static/css/main.32c9ca58.css.map",
-    "main.380c6422.js.map": "/static/js/main.380c6422.js.map"
+    "main.4293a2bc.css.map": "/static/css/main.4293a2bc.css.map",
+    "main.7ad76343.js.map": "/static/js/main.7ad76343.js.map"
   },
   "entrypoints": [
-    "static/css/main.32c9ca58.css",
-    "static/js/main.380c6422.js"
+    "static/css/main.4293a2bc.css",
+    "static/js/main.7ad76343.js"
   ]
 }
