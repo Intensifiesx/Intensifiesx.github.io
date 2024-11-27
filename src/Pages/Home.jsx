@@ -1,11 +1,13 @@
 // Description: This is the home page of the website
 
 // Import CSS
-import "../Color.css";
 import * as THREE from "three";
 
 // Import libraries
 import { useEffect } from "react";
+import Footer from "./Components/Footer";
+import bg from "../Images/Zain.png";
+import "./CSS/Home.css";
 
 function getHexColor() {
     return "#" + (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6);
@@ -44,19 +46,19 @@ export default function MainPage() {
                             color: { value: new THREE.Color(layerColor) },
                         },
                         vertexShader: `
-            varying vec2 vUv;
-            void main() {
-              vUv = uv;
-              gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
-            }
-          `,
+                            varying vec2 vUv;
+                            void main() {
+                            vUv = uv;
+                            gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+                            }
+                        `,
                         fragmentShader: `
-            uniform vec3 color;
-            varying vec2 vUv;
-            void main() {
-              gl_FragColor = vec4(color * vUv.x, 1.0);
-            }
-          `,
+                            uniform vec3 color;
+                            varying vec2 vUv;
+                            void main() {
+                            gl_FragColor = vec4(color * vUv.x, 1.0);
+                            }
+                        `,
                     })
                 );
                 squares[id].position.set(x, y, 0);
@@ -77,15 +79,13 @@ export default function MainPage() {
             false
         );
 
-        console.log(squares);
-
         // Render loop
         const animate = () => {
             requestAnimationFrame(animate);
             squares.forEach((square) => {
                 square.position.x += 0.3;
                 square.rotation.y += 0.01;
-                if (square.position.x > 350) square.position.x -= 770;
+                if (square.position.x > 380) square.position.x -= 770;
             });
 
             renderer.clear();
@@ -96,20 +96,19 @@ export default function MainPage() {
     }, []);
 
     return (
-        // align the canvas to the center of the page
-        <div style={{ textAlign: "center", backgroundColor: "cadetblue" }} className="gradientHome">
-            <div style={{ paddingTop: "30px" }}></div>
-            <div className="cleanText">
-                <h1>Home </h1>
-                <p>
-                    Welcome to my Portfolio React Website!!<br></br>🥳🥳🥳🥳🥳
-                </p>
+        <div className="home">
+            <div className="nameFill">
+                <div className="name">
+                    <img src={bg} alt="Zain" />
+                    <br />
+                    Hi, I'm
+                    <br />
+                    <p style={{ fontSize: "50px" }}>Zain Hindi</p>
+                </div>
             </div>
 
-            <canvas id="canvas" style={{ display: "block", margin: "0 auto", marginTop: "20px" }} />
-            <div className="bottom-text" style={{ marginBottom: "-340px", backgroundColor: "black", color: "white", padding: "15px" }}>
-                Made by Zain
-            </div>
+            <canvas id="canvas" style={{ display: "block", margin: "0 auto" }} />
+            <Footer />
         </div>
     );
 }

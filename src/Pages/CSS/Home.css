@@ -1,0 +1,29 @@
+.home {
+    text-align: center;
+    background-image: url(../../Images/Bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.name {
+    font-size: 30px;
+    color: white;
+    font-family: "Metropolis", sans-serif;
+    background-color: black;
+    height: 50%;
+}
+
+.nameFill {
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.name > img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 10px;
+}
