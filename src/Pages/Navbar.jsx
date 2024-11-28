@@ -20,8 +20,8 @@ function getLinkedButtons(to, text) {
 export default function Navbar() {
     return (
         <nav style={{ backgroundColor: "white" }}>
-            {getLinkedButtons("", "Home")}
-            {getLinkedButtons("showcase", "Showcase")}
+            {/* {getLinkedButtons("", "Home")}
+            {getLinkedButtons("showcase", "Showcase")} */}
         </nav>
     );
 }

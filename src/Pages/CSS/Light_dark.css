@@ -1,0 +1,8 @@
+:root {
+    color-scheme: light dark;
+}
+
+.omni-theme {
+    background: light-dark(#fff, #000);
+    color: light-dark(#000, #fff);
+}

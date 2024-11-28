@@ -1,113 +1,34 @@
-// Description: This is the home page of the website
-
-// Import CSS
-import * as THREE from "three";
-
-// Import libraries
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "./Components/Footer";
-import bg from "../Images/Zain.png";
+import godHandImg from "../Images/GodHand.png";
+import moon from "../Images/Moon.png";
+import cloudLeft from "../Images/CloudsLeft.png";
+import cloudRight from "../Images/CloudsRight.png";
 import "./CSS/Home.css";
+import "./CSS/Tailwind.css";
 
-function getHexColor() {
-    return "#" + (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6);
-}
-
+// Home.jsx
 export default function MainPage() {
-    useEffect(() => {
-        // Create the scene and camera
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
-        camera.position.z = 250;
-        camera.position.y = -190;
-        camera.rotateX(0.5);
+    const navigate = useNavigate();
 
-        // Attach the renderer to the canvas and set its settings
-        const canvas = document.getElementById("canvas");
-        const renderer = new THREE.WebGLRenderer({
-            canvas: canvas,
-            antialias: true,
-            alpha: true,
-        });
-        renderer.setSize(window.innerWidth, window.innerHeight); // Fullscreen
-        renderer.autoClear = false; // To allow render overlay on top of sprited sphere
-        renderer.setClearColor(0x000000, 0.0); // Transparent background
-
-        let squares = [],
-            squaresPosY = [],
-            id = 0;
-        for (let i = 0, x = -360; i < 22; i++, x += 35) {
-            let layerColor = getHexColor();
-            for (let k = 0, y = 100; k < 11; k++, y -= 30) {
-                squares[id] = new THREE.Mesh(
-                    new THREE.BoxGeometry(25, 25, 25),
-                    new THREE.ShaderMaterial({
-                        uniforms: {
-                            color: { value: new THREE.Color(layerColor) },
-                        },
-                        vertexShader: `
-                            varying vec2 vUv;
-                            void main() {
-                            vUv = uv;
-                            gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
-                            }
-                        `,
-                        fragmentShader: `
-                            uniform vec3 color;
-                            varying vec2 vUv;
-                            void main() {
-                            gl_FragColor = vec4(color * vUv.x, 1.0);
-                            }
-                        `,
-                    })
-                );
-                squares[id].position.set(x, y, 0);
-                squaresPosY[id] = y;
-                squares[id].rotation.set(0, 0, 0);
-                scene.add(squares[id]);
-                id++;
-            }
-        }
-
-        window.addEventListener(
-            "resize",
-            () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            },
-            false
-        );
-
-        // Render loop
-        const animate = () => {
-            requestAnimationFrame(animate);
-            squares.forEach((square) => {
-                square.position.x += 0.3;
-                square.rotation.y += 0.01;
-                if (square.position.x > 380) square.position.x -= 770;
-            });
-
-            renderer.clear();
-            renderer.render(scene, camera);
-        };
-
-        animate();
-    }, []);
+    const handleMoonClick = () => {
+        navigate("/secondaryhome");
+    };
 
     return (
         <div className="home">
-            <div className="nameFill">
-                <div className="name">
-                    <img src={bg} alt="Zain" />
-                    <br />
-                    Hi, I'm
-                    <br />
-                    <p style={{ fontSize: "50px" }}>Zain Hindi</p>
-                </div>
+            <img
+                src={moon}
+                alt="Moon"
+                className="moon"
+                onClick={handleMoonClick}
+                style={{ pointerEvents: "auto" }} // Changed from "pointer-events" to pointerEvents
+            />
+            <img src={cloudLeft} alt="Clouds" className="cloudLeft" />
+            <img src={cloudRight} alt="Clouds" className="cloudRight" />
+            <div className="godHand">
+                <img src={godHandImg} alt="God Hand" />
             </div>
-
-            <canvas id="canvas" style={{ display: "block", margin: "0 auto" }} />
             <Footer />
         </div>
     );

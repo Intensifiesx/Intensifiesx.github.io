@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PlayerStats() {
+export default function Test() {
     return (
         <>
             <div>

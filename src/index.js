@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import NoPage from "./Pages/NoPage";
 import Showcase from "./Pages/Showcase";
 import Layout from "./Pages/Layout";
+import SecondaryHome from "./Pages/SecondaryHome";
 
 // Import libraries
 import ReactDOM from "react-dom";
@@ -17,6 +18,7 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
+                    <Route path="secondaryhome" element={<SecondaryHome />} />
                     <Route path="showcase" element={<Showcase />} />
                     <Route path="*" element={<NoPage />} />
                 </Route>
