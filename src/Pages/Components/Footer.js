@@ -4,7 +4,7 @@ import "../CSS/Footer.css";
 export default function Footer() {
     return (
         <footer className="footer">
-            <div style={{ paddingTop: "5px", opacity: ".7" }}>© 2024 Made by Zain</div>
+            <div style={{ paddingTop: "5px", opacity: ".7" }}>© 2024 Made by Zain (Website is a work in progress)</div>
             <div>
                 <button onClick={() => window.open("https://github.com/Intensifiesx", "_blank")} style={{ background: "transparent" }}>
                     <img
