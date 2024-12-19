@@ -12,14 +12,16 @@ import "./CSS/Tailwind.css";
 
 export default function MainPage() {
     const navigate = useNavigate();
-    const hoverMoonAudio = useRef(null);
+    const hoverMoonAudio = useRef(new Audio(handRisingSound));
     const mainAudio = useRef(new Audio(mainSound));
+    const transitionAudio = useRef(new Audio(transitionSound));
+    mainAudio.current.volume = 0.02;
+    hoverMoonAudio.current.volume = 0.05;
 
     useEffect(() => {
         // Play main audio on component mount
         mainAudio.current.play().catch(console.log);
         mainAudio.current.loop = true;
-        mainAudio.current.volume = 0.02;
 
         return () => {
             // Clean up on component unmount
@@ -31,16 +33,15 @@ export default function MainPage() {
 
     const handleMoonClick = () => {
         navigate("/secondaryhome");
-        const transitionAudio = new Audio(transitionSound);
-        transitionAudio.volume = 0.03;
-        transitionAudio.play().catch(console.log);
+        if (transitionAudio.current) {
+            mainAudio.current.pause();
+            hoverMoonAudio.current?.pause();
+            transitionAudio.current.volume = 0.03;
+            transitionAudio.current.play().catch(console.log);
+        }
     };
 
     const handleMoonMouseEnter = () => {
-        if (!hoverMoonAudio.current) {
-            hoverMoonAudio.current = new Audio(handRisingSound);
-            hoverMoonAudio.current.volume = 0.05;
-        }
         if (hoverMoonAudio.current.paused) {
             mainAudio.current.pause();
             hoverMoonAudio.current.currentTime = 0; // Ensure it starts from the beginning
