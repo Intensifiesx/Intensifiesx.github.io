@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.f8c3cba0.css",
-    "main.js": "/static/js/main.090493bc.js",
+    "main.css": "/static/css/main.797e2a70.css",
+    "main.js": "/static/js/main.220d8104.js",
+    "static/media/Gats.mp3": "/static/media/Gats.79b57df9a65773cc77f3.mp3",
+    "static/media/Transition.wav": "/static/media/Transition.b99fb6c448e93a836d80.wav",
     "static/media/BG.jpg": "/static/media/BG.e8a025e10c7795137a2a.jpg",
-    "static/media/CloudsRight.png": "/static/media/CloudsRight.362c9610c845b097f1c3.png",
-    "static/media/CloudsLeft.png": "/static/media/CloudsLeft.51cdb38d8c4321c9ca0d.png",
     "static/media/Moon.png": "/static/media/Moon.e10da4e37d3d4fd0ebb4.png",
     "static/media/Zain.png": "/static/media/Zain.3a329f4156d9ae821115.png",
     "static/media/GodHand.png": "/static/media/GodHand.cf5edb8a8eecf5688ef5.png",
+    "static/media/CloudLeft.png": "/static/media/CloudLeft.b5a76c53516a9bbeb4d5.png",
     "static/media/MetropolisRegular.ttf": "/static/media/MetropolisRegular.3e96c38bc01555998420.ttf",
+    "static/media/Hand.mp3": "/static/media/Hand.02a5b9076bab4b5a3280.mp3",
     "index.html": "/index.html",
-    "main.f8c3cba0.css.map": "/static/css/main.f8c3cba0.css.map",
-    "main.090493bc.js.map": "/static/js/main.090493bc.js.map"
+    "main.797e2a70.css.map": "/static/css/main.797e2a70.css.map",
+    "main.220d8104.js.map": "/static/js/main.220d8104.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8c3cba0.css",
-    "static/js/main.090493bc.js"
+    "static/css/main.797e2a70.css",
+    "static/js/main.220d8104.js"
   ]
 }
