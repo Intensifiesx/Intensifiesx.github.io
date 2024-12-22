@@ -1,28 +1,33 @@
-// This is the main entry point of the app
-
-// Import components
+// App.js
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import ReactDOM from "react-dom";
 import Home from "./Pages/Home";
 import NoPage from "./Pages/NoPage";
 import Showcase from "./Pages/Showcase";
-import Layout from "./Pages/Layout";
 import SecondaryHome from "./Pages/SecondaryHome";
+import FooterComp from "./Pages/Footer";
+import "./CSS/tailwind.css";
 
-// Import libraries
-import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+function AppContent() {
+    const location = useLocation();
+
+    return (
+        <>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="secondaryhome" element={<SecondaryHome />} />
+                <Route path="showcase" element={<Showcase />} />
+                <Route path="*" element={<NoPage />} />
+            </Routes>
+            {location.pathname !== "/" && <FooterComp />}
+        </>
+    );
+}
 
 export default function App() {
-    // Routes to the different pages
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />
-                    <Route path="secondaryhome" element={<SecondaryHome />} />
-                    <Route path="showcase" element={<Showcase />} />
-                    <Route path="*" element={<NoPage />} />
-                </Route>
-            </Routes>
+            <AppContent />
         </BrowserRouter>
     );
 }

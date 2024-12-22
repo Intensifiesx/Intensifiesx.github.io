@@ -1,10 +1,11 @@
-import Footer from "./Components/Footer";
+import Navbar from "./Navbar";
 import bg from "../Images/Zain.png";
-import "./CSS/SecondaryHome.css";
+import "../CSS/SecondaryHome.css";
 
 export default function MainPage() {
     return (
         <div className="home">
+            <Navbar />
             <div className="nameFill">
                 <div className="name">
                     <img src={bg} alt="Zain" rel="preload" />
@@ -14,7 +15,6 @@ export default function MainPage() {
                     <p style={{ fontSize: "50px" }}>Zain Hindi</p>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

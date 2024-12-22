@@ -1,20 +1,16 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Components/Footer";
 import godHandImg from "../Images/GodHand.png";
 import moon from "../Images/Moon.png";
 import cloud from "../Images/CloudLeft.png";
 import mainSound from "../SFX/Gats.mp3";
 import handRisingSound from "../SFX/Hand.mp3";
-import transitionSound from "../SFX/Transition.wav";
-import "./CSS/Home.css";
-import "./CSS/Tailwind.css";
+import "../CSS/Home.css";
 
 export default function MainPage() {
     const navigate = useNavigate();
     const hoverMoonAudio = useRef(new Audio(handRisingSound));
     const mainAudio = useRef(new Audio(mainSound));
-    const transitionAudio = useRef(new Audio(transitionSound));
     mainAudio.current.volume = 0.02;
     hoverMoonAudio.current.volume = 0.05;
 
@@ -32,13 +28,9 @@ export default function MainPage() {
     }, []);
 
     const handleMoonClick = () => {
+        mainAudio.current.pause();
+        hoverMoonAudio.current?.pause();
         navigate("/secondaryhome");
-        if (transitionAudio.current) {
-            mainAudio.current.pause();
-            hoverMoonAudio.current?.pause();
-            transitionAudio.current.volume = 0.03;
-            transitionAudio.current.play().catch(console.log);
-        }
     };
 
     const handleMoonMouseEnter = () => {
@@ -51,11 +43,9 @@ export default function MainPage() {
     };
 
     const handleMoonMouseLeave = () => {
-        if (hoverMoonAudio.current) {
+        if (!hoverMoonAudio.current.paused) {
             hoverMoonAudio.current.pause();
-            hoverMoonAudio.current.currentTime = 0;
         }
-        mainAudio.current.play().catch(console.log);
     };
 
     return (
@@ -73,7 +63,6 @@ export default function MainPage() {
             <div className="godHand">
                 <img src={godHandImg} alt="God Hand" />
             </div>
-            <Footer />
         </div>
     );
 }
