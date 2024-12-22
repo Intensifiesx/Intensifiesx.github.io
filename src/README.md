@@ -10,8 +10,14 @@ Step 2: Start the app and open it in the browser
 npm start
 ```
 
-Step 3: Build the app for production
+Step 3: Push all changes to the repository
 
 ```shell
-npm run build
+USE GIT DESKTOP TO COMMIT AND PUSH CHANGES
+```
+
+Step 4: Build the app for production
+
+```shell
+npm run deploy
 ```

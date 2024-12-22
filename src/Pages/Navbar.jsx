@@ -21,10 +21,5 @@ function getLinkedButtons(to, text) {
 
 // The navbar component
 export default function Navbar() {
-    return (
-        <nav className="navbar">
-            {getLinkedButtons("", "Home")}
-            {getLinkedButtons("showcase", "Showcase")}
-        </nav>
-    );
+    return <nav className="navbar">{getLinkedButtons("", "Home")}</nav>;
 }
