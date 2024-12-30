@@ -36,7 +36,7 @@ export default function MainPage() {
     const handleMoonMouseEnter = () => {
         if (hoverMoonAudio.current.paused) {
             mainAudio.current.pause();
-            hoverMoonAudio.current.currentTime = 0; // Ensure it starts from the beginning
+            hoverMoonAudio.current.currentTime = 0;
             hoverMoonAudio.current.loop = true;
             hoverMoonAudio.current.play().catch(console.log);
         }
