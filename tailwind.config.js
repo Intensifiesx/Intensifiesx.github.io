@@ -6,7 +6,11 @@ module.exports = {
         "./src/Pages/CSS/**/*.{css}", // Include any CSS files in Pages/CSS
     ],
     theme: {
-        extend: {},
+        extend: {
+            backgroundImage: {
+                HomeBG: "url('/src/Images/BG.jpg')",
+            },
+        },
     },
     plugins: [],
 };
