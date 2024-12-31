@@ -11,16 +11,20 @@ export default function MainPage() {
     const navigate = useNavigate();
     const hoverMoonAudio = useRef(new Audio(handRisingSound));
     const mainAudio = useRef(new Audio(mainSound));
-    mainAudio.current.volume = 0.02;
-    hoverMoonAudio.current.volume = 0.05;
 
     useEffect(() => {
-        // Play main audio on component mount
-        mainAudio.current.play().catch(console.log);
-        mainAudio.current.loop = true;
+        // Set volumes
+        mainAudio.current.volume = 0.02;
+        hoverMoonAudio.current.volume = 0.05;
+
+        try {
+            mainAudio.current.loop = true;
+            mainAudio.current.play();
+        } catch (error) {
+            console.log("Audio autoplay failed:", error);
+        }
 
         return () => {
-            // Clean up on component unmount
             mainAudio.current.pause();
             mainAudio.current.currentTime = 0;
             hoverMoonAudio.current?.pause();
@@ -45,6 +49,7 @@ export default function MainPage() {
     const handleMoonMouseLeave = () => {
         if (!hoverMoonAudio.current.paused) {
             hoverMoonAudio.current.pause();
+            mainAudio.current.play().catch(console.log);
         }
     };
 
