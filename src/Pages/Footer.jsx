@@ -12,7 +12,7 @@ function FooterLink(link, svg) {
     );
 }
 
-export default function FooterComp() {
+export default function Footer() {
     return (
         <footer className="bg-black text-white fixed bottom-0 w-full py-4">
             <div className="container mx-auto px-4 flex justify-between items-center max-w-4xl">
