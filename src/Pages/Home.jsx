@@ -13,21 +13,25 @@ export default function MainPage() {
     const mainAudio = useRef(new Audio(mainSound));
 
     useEffect(() => {
+        // Store ref values in variables
+        const mainAudioCurrent = mainAudio.current;
+        const hoverMoonAudioCurrent = hoverMoonAudio.current;
+
         // Set volumes
-        mainAudio.current.volume = 0.02;
-        hoverMoonAudio.current.volume = 0.05;
+        mainAudioCurrent.volume = 0.02;
+        hoverMoonAudioCurrent.volume = 0.05;
 
         try {
-            mainAudio.current.loop = true;
-            mainAudio.current.play();
+            mainAudioCurrent.loop = true;
+            mainAudioCurrent.play();
         } catch (error) {
             console.log("Audio autoplay failed:", error);
         }
 
         return () => {
-            mainAudio.current.pause();
-            mainAudio.current.currentTime = 0;
-            hoverMoonAudio.current?.pause();
+            mainAudioCurrent.pause();
+            mainAudioCurrent.currentTime = 0;
+            hoverMoonAudioCurrent?.pause();
         };
     }, []);
 
