@@ -1,33 +1,66 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default function addProjectToList(title, description, image, link, linkName) {
+const AddProjectToList = ({ title, description, image, link, linkName }) => {
+    // Fixed props destructuring
     return (
-        <li>
-            <div>
+        <li className="list-none mb-8">
+            <div className="container mx-auto">
                 <h2
                     className="text-2xl font-semibold rounded-lg p-2 
-                        bg-purple-600 text-purple-50 hover:bg-purple-700 
-                        transition-colors duration-300"
+                        bg-purple-600 text-purple-50 
+                        hover:bg-purple-700 
+                        transition-all duration-300 ease-in-out
+                        -webkit-font-smoothing: antialiased"
                 >
                     {title}
                 </h2>
 
-                <div className="mt-4 flex m-4 relative">
-                    <div className="flex flex-col p-2">
-                        <p className="text-gray-300">{description}</p>
-                        <a
-                            href={link}
-                            className="flex px-5 gap-2 border-2 border-purple-400 rounded-lg p-2 
-                                text-purple-600 bg-purple-50 w-fit mt-4 font-bold
-                                hover:bg-purple-600 hover:text-purple-50 hover:scale-105
-                                transform duration-300 ease-in-out"
+                <div className="mt-4 flex flex-col md:flex-row gap-4 relative p-4">
+                    <div className="flex-1">
+                        {" "}
+                        {/* Added flex-1 */}
+                        <p className="text-gray-300 mb-4 leading-relaxed">{description}</p>
+                        <button
+                            onClick={() => window.open(link, "_blank")}
+                            className="flex items-center px-5 gap-2 
+                                border-2 border-purple-400 rounded-lg p-2 
+                                text-purple-600 bg-purple-50 
+                                w-fit font-bold
+                                hover:bg-purple-600 hover:text-purple-50 
+                                hover:scale-105 active:scale-95
+                                transform transition-all duration-300 ease-in-out
+                                focus:outline-none focus:ring-2 focus:ring-purple-500
+                                disabled:opacity-50"
+                            rel="noopener noreferrer"
                         >
                             {linkName}
-                        </a>
+                        </button>
                     </div>
-                    <img src={image} alt="Project 1" className="w-1/3 h-auto rounded-lg mt-4" rel="preload" />
+                    <div className="flex justify-center items-center md:w-1/3">
+                        {" "}
+                        {/* Added fixed width */}
+                        <img
+                            src={image}
+                            alt={`${title} preview`}
+                            className="w-full h-auto object-cover rounded-lg
+                                    shadow-lg transition-transform duration-300
+                                    hover:scale-[1.02]"
+                            loading="lazy"
+                        />
+                    </div>
                 </div>
             </div>
         </li>
     );
-}
+};
+
+AddProjectToList.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    linkName: PropTypes.string.isRequired,
+};
+
+export default AddProjectToList;

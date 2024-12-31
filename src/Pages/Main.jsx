@@ -64,28 +64,28 @@ export default function Main() {
                             <h1 className="text-white text-7xl font-bold text-center mb-8">Projects</h1>
                         </div>
                         <ul className="space-y-8">
-                            {addProjectToList(
-                                "2D Isometric Roguelike Game",
-                                `Welcome to our 2D roguelike horror game project built in Unity! Our game features diverse map styles, from horror to
-                            ancient settings, combined with strategic spell casting and an augment system for character progression. Players will
-                            experience procedurally generated levels, fluid movement mechanics, and an immersive atmosphere through visuals and sound
-                            design. Each playthrough offers unique challenges and experiences, keeping players engaged with continuous content
-                            variety.`,
-                                "https://media.licdn.com/dms/image/v2/D562DAQGMWzPEIYomUQ/profile-treasury-image-shrink_1920_1920/profile-treasury-image-shrink_1920_1920/0/1728890487384?e=1736233200&v=beta&t=mqEPx0WUV2mSu6Iwt1_sHLIHE1EdTqhGr2q-_DdAZBE",
-                                "https://github.com/UNLV-CS472-672/2024-S-GROUP2-2DRove",
-                                "GitHub"
-                            )}
-                            {addProjectToList(
-                                "ML Cosmic Mystery Competition",
-                                `Developed a machine learning solution for the Spaceship Titanic challenge, predicting passenger transport anomalies in an interstellar accident. 
+                            {addProjectToList({
+                                title: "2D Isometric Roguelike Game",
+                                description: `Welcome to our 2D roguelike horror game project built in Unity! Our game features diverse map styles, from horror to
+                                                            ancient settings, combined with strategic spell casting and an augment system for character progression. Players will
+                                                            experience procedurally generated levels, fluid movement mechanics, and an immersive atmosphere through visuals and sound
+                                                            design. Each playthrough offers unique challenges and experiences, keeping players engaged with continuous content
+                                                            variety.`,
+                                image: "https://media.licdn.com/dms/image/v2/D562DAQGMWzPEIYomUQ/profile-treasury-image-shrink_1920_1920/profile-treasury-image-shrink_1920_1920/0/1728890487384?e=1736233200&v=beta&t=mqEPx0WUV2mSu6Iwt1_sHLIHE1EdTqhGr2q-_DdAZBE",
+                                link: "https://github.com/UNLV-CS472-672/2024-S-GROUP2-2DRove",
+                                linkName: "GitHub",
+                            })}
+                            {addProjectToList({
+                                title: "ML Cosmic Mystery Competition",
+                                description: `Developed a machine learning solution for the Spaceship Titanic challenge, predicting passenger transport anomalies in an interstellar accident. 
                                     Using scikit-learn's HistGradientBoostingClassifier, my collegue and I engineered features and optimized the model to achieve 81.32% validation accuracy. 
                                     The project involved extensive data preprocessing, feature engineering, and model tuning, resulting in a top 150 placement (#141) on the Kaggle 
                                     leaderboard. This project demonstrated practical applications of machine learning in analyzing complex passenger data patterns and contributing 
                                     to theoretical rescue strategy development.`,
-                                "https://storage.googleapis.com/kaggle-media/competitions/Spaceship%20Titanic/joel-filipe-QwoNAhbmLLo-unsplash.jpg",
-                                "https://github.com/Intensifiesx/Spaceship-Titanic",
-                                "GitHub"
-                            )}
+                                image: "https://storage.googleapis.com/kaggle-media/competitions/Spaceship%20Titanic/joel-filipe-QwoNAhbmLLo-unsplash.jpg",
+                                link: "https://github.com/Intensifiesx/Spaceship-Titanic",
+                                linkName: "GitHub",
+                            })}
                         </ul>
                     </section>
                 </div>

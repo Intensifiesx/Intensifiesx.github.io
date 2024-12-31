@@ -5,7 +5,7 @@ function FooterLink(link, svg) {
         <button
             onClick={() => window.open(link, "_blank")}
             aria-label={link}
-            className="hover:opacity-80 transition-opacity hover:scale-125 transform duration-300 ease-in-out"
+            className="hover:opacity-80 transition-opacity hover:scale-125 transform duration-1000 ease-in-out"
         >
             {svg}
         </button>
