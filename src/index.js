@@ -25,6 +25,8 @@ function AppContent() {
 export default function App() {
     return (
         <HashRouter>
+            {" "}
+            {/* Changed from BrowserRouter to HashRouter */}
             <AppContent />
         </HashRouter>
     );
