@@ -34,7 +34,7 @@ export default function MainPage() {
     const handleMoonClick = () => {
         mainAudio.current.pause();
         hoverMoonAudio.current?.pause();
-        navigate("/secondaryhome");
+        navigate("/main");
     };
 
     const handleMoonMouseEnter = () => {

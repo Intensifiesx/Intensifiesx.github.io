@@ -24,10 +24,10 @@
 
 .cloudLeft {
     position: fixed;
-    left: 15vw;
-    top: 5vh;
-    width: 60vh;
-    height: 30vh;
+    left: 35vh;
+    top: 0vh;
+    width: 70vh;
+    height: 40vh;
     transition: left 2s ease;
     z-index: 2;
     pointer-events: none;
@@ -35,9 +35,9 @@
 
 .cloudRight {
     position: fixed;
-    right: 15vw;
+    right: 45vh;
     top: 25vh;
-    width: 60vh;
+    width: 65vh;
     height: 30vh;
     transition: right 2s ease;
     z-index: 2;
@@ -45,11 +45,11 @@
 }
 
 .home .moon:hover ~ .cloudRight {
-    right: -20vw;
+    right: -10vh;
 }
 
 .home .moon:hover ~ .cloudLeft {
-    left: -10vw;
+    left: -10vh;
 }
 
 .home .moon:hover ~ .godHand {

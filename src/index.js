@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import ReactDOM from "react-dom";
 import Home from "./Pages/Home";
 import NoPage from "./Pages/NoPage";
-import SecondaryHome from "./Pages/SecondaryHome";
+import Main from "./Pages/Main";
 import FooterComp from "./Pages/Footer";
 import "./CSS/tailwind.css";
 
@@ -14,7 +14,7 @@ function AppContent() {
         <>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="secondaryhome" element={<SecondaryHome />} />
+                <Route path="main" element={<Main />} />
                 <Route path="*" element={<NoPage />} />
             </Routes>
             {location.pathname !== "/" && <FooterComp />}
