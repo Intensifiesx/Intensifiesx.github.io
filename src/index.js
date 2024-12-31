@@ -1,5 +1,5 @@
 // App.js
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import ReactDOM from "react-dom";
 import Home from "./Pages/Home";
 import NoPage from "./Pages/NoPage";
@@ -24,9 +24,9 @@ function AppContent() {
 
 export default function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <AppContent />
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
