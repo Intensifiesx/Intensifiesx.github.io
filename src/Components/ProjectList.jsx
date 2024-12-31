@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const AddProjectToList = ({ title, description, image, link, linkName }) => {
-    // Fixed props destructuring
     return (
         <li className="list-none mb-8">
             <div className="container mx-auto">
@@ -18,9 +17,7 @@ const AddProjectToList = ({ title, description, image, link, linkName }) => {
 
                 <div className="mt-4 flex flex-col md:flex-row gap-4 relative p-4">
                     <div className="flex-1">
-                        {" "}
-                        {/* Added flex-1 */}
-                        <p className="text-gray-300 mb-4 leading-relaxed">{description}</p>
+                        <p className="text-gray-300 mb-4 leading-relaxed text-justify">{description}</p>
                         <button
                             onClick={() => window.open(link, "_blank")}
                             className="flex items-center px-5 gap-2 
@@ -37,9 +34,7 @@ const AddProjectToList = ({ title, description, image, link, linkName }) => {
                             {linkName}
                         </button>
                     </div>
-                    <div className="flex justify-center items-center md:w-1/3">
-                        {" "}
-                        {/* Added fixed width */}
+                    <div className="flex md:w-1/3">
                         <img
                             src={image}
                             alt={`${title} preview`}

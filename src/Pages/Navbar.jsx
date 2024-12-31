@@ -10,7 +10,7 @@ function getLinkedButtons(to, text) {
                              text-white border-white rounded-full
                              overflow-hidden 
                              outline-none focus:outline-none
-                             appearance-none
+                             appearance-none bg-white bg-opacity-10
                              group hover:scale-110 transition-all duration-300"
                 >
                     {/* Filling background */}
@@ -30,7 +30,7 @@ function getLinkedButtons(to, text) {
 
 export default function Navbar() {
     return (
-        <nav className="p-4 inline-flex  top-0 right-0 fixed">
+        <nav className="p-4 inline-flex top-0 right-0 fixed">
             {getLinkedButtons("", "Home")}
             {getLinkedButtons("", "About")}
             {getLinkedButtons("", "Projects")}
