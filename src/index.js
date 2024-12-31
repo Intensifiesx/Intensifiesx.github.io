@@ -1,5 +1,5 @@
 // App.js
-import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import ReactDOM from "react-dom";
 import Home from "./Pages/Home";
 import NoPage from "./Pages/NoPage";
@@ -24,11 +24,9 @@ function AppContent() {
 
 export default function App() {
     return (
-        <HashRouter>
-            {" "}
-            {/* Changed from BrowserRouter to HashRouter */}
+        <BrowserRouter>
             <AppContent />
-        </HashRouter>
+        </BrowserRouter>
     );
 }
 
