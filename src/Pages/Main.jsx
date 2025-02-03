@@ -2,6 +2,7 @@ import Navbar from "./Navbar.jsx";
 import bg from "../Images/Zain.png";
 import rove from "../Images/2DRove.png";
 import AddProjectToList from "../Components/ProjectList.jsx";
+import NewSection from "../Components/NewSection.jsx";
 
 export default function Main() {
     return (
@@ -55,32 +56,43 @@ export default function Main() {
 
             {/* --------------------------------------------------------------- */}
 
+            {/* Experience Section */}
+            <NewSection
+                title="Experience"
+                content={[
+                    <AddProjectToList
+                        title="Freelance Software Engineer @ Fiverr"
+                        description={`
+                            Conducted comprehensive qualitative and quantitative analyses of AI-generated responses, providing actionable feedback to optimize model accuracy, contextual understanding, and user satisfaction across technical and creative domains.
+                            Developed and implemented advanced AI model evaluation methodologies, enhancing model performance through systematic training on complex system instructions and API tools.
+                            Pioneered sophisticated AI code analysis techniques, including image-to-code conversion, to rigorously assess technical proficiency and adaptive intelligence in AI models.`}
+                        image="https://management.org/wp-content/uploads/2023/06/A-Comprehensive-Fiverr-Review.png"
+                        link="https://www.fiverr.com/intensifiesx/"
+                        linkName="Fiverr"
+                    />,
+                ]}
+            />
+
             {/* Projects Section */}
-            <div className="min-h-screen flex items-center justify-center py-16" id="projects">
-                <div className="w-full max-w-[800px]">
-                    <section>
-                        <div>
-                            <h1 className="text-white text-7xl font-bold text-center mb-8">Projects</h1>
-                        </div>
-                        <ul className="space-y-8">
-                            <AddProjectToList
-                                title="2D Isometric Roguelike Game"
-                                description={`Welcome to our 2D roguelike horror game project built in Unity! Our game features diverse map styles, from horror to ancient settings, combined with strategic spell casting and an augment system for character progression. Players will experience procedurally generated levels, fluid movement mechanics, and an immersive atmosphere through visuals and sound design. Each playthrough offers unique challenges and experiences, keeping players engaged with continuous content variety.`}
-                                image={rove}
-                                link="https://github.com/UNLV-CS472-672/2024-S-GROUP2-2DRove"
-                                linkName="GitHub"
-                            />
-                            <AddProjectToList
-                                title="ML Cosmic Mystery Competition"
-                                description={`Developed a machine learning solution for the Spaceship Titanic challenge, predicting passenger transport anomalies in an interstellar accident. Using scikit-learn's Hist Gradient Boosting Classifier, my collegue and I engineered features and optimized the model to achieve 81.32% validation accuracy. The project involved extensive data preprocessing, feature engineering, and model tuning, resulting in a top 150 placement (#141) on the Kaggle leaderboard. This project demonstrated practical applications of machine learning in analyzing complex passenger data patterns and contributing to theoretical rescue strategy development.`}
-                                image="https://storage.googleapis.com/kaggle-media/competitions/Spaceship%20Titanic/joel-filipe-QwoNAhbmLLo-unsplash.jpg"
-                                link="https://github.com/Intensifiesx/Spaceship-Titanic"
-                                linkName="GitHub"
-                            />
-                        </ul>
-                    </section>
-                </div>
-            </div>
+            <NewSection
+                title="Projects"
+                content={[
+                    <AddProjectToList
+                        title="2D Isometric Roguelike Game"
+                        description={`Welcome to our 2D roguelike horror game project built in Unity! Our game features diverse map styles, from horror to ancient settings, combined with strategic spell casting and an augment system for character progression. Players will experience procedurally generated levels, fluid movement mechanics, and an immersive atmosphere through visuals and sound design. Each playthrough offers unique challenges and experiences, keeping players engaged with continuous content variety.`}
+                        image={rove}
+                        link="https://github.com/UNLV-CS472-672/2024-S-GROUP2-2DRove"
+                        linkName="GitHub"
+                    />,
+                    <AddProjectToList
+                        title="ML Cosmic Mystery Competition"
+                        description={`Developed a machine learning solution for the Spaceship Titanic challenge, predicting passenger transport anomalies in an interstellar accident. Using scikit-learn's Hist Gradient Boosting Classifier, my colleague and I engineered features and optimized the model to achieve 81.32% validation accuracy. The project involved extensive data preprocessing, feature engineering, and model tuning, resulting in a top 150 placement (#141) on the Kaggle leaderboard. This project demonstrated practical applications of machine learning in analyzing complex passenger data patterns and contributing to theoretical rescue strategy development.`}
+                        image="https://storage.googleapis.com/kaggle-media/competitions/Spaceship%20Titanic/joel-filipe-QwoNAhbmLLo-unsplash.jpg"
+                        link="https://github.com/Intensifiesx/Spaceship-Titanic"
+                        linkName="GitHub"
+                    />,
+                ]}
+            />
         </div>
     );
 }
