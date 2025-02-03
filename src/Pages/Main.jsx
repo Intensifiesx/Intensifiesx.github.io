@@ -7,29 +7,27 @@ export default function Main() {
     return (
         <div className="bg-black">
             <Navbar />
-            {/* First Section - Full height view */}
             <div className="h-screen flex items-center justify-center">
                 <div className="w-full max-w-[800px] flex flex-col items-center">
-                    {/* Image container */}
+                    {/* ZAIN IMAGE */}
                     <div className="w-full sm:w-4/5 md:w-3/5 lg:w-2/5 px-4">
                         <img src={bg} className="w-full h-auto" alt="Zain" rel="preload" />
                     </div>
-
-                    {/* Text content */}
+                    {/* ZAIN Name */}
                     <div className="text-white text-center mt-4">
                         <p className="text-xl sm:text-2xl md:text-3xl">Hi, I'm</p>
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mt-2">Zain Hindi</h1>
                     </div>
-
-                    {/* Description */}
+                    {/* ZAIN Description */}
                     <div className="text-white text-center mt-4">
                         <p className="text-sm sm:text-base md:text-lg">
-                            Computer Scientist B.S. & Software Engineer
+                            Computer Scientist B.S. & Systems Engineer
                             <br />
                             Based in Nevada
                         </p>
                     </div>
 
+                    {/* View Projects Button UNDER ZAIN SECTION */}
                     <a
                         href="#projects"
                         onClick={(e) => {
@@ -38,10 +36,8 @@ export default function Main() {
                                 behavior: "smooth",
                             });
                         }}
-                        className="relative text-white text-lg mt-5 px-6 py-3 
-                            border-2 border-white rounded-full no-underline
-                            overflow-hidden transition-all duration-500
-                            hover:shadow-[0_0_25px_rgba(255,255,255,0.5)]
+                        className="relative text-white text-lg mt-5 px-6 py-3 border-2 border-white rounded-full no-underline
+                            overflow-hidden transition-all duration-500 hover:shadow-[0_0_25px_rgba(255,255,255,0.5)]
                             hover:scale-110 transform inline-flex items-center gap-2"
                     >
                         <span className="justify-center items-center">View Projects</span>
@@ -57,7 +53,9 @@ export default function Main() {
                 </div>
             </div>
 
-            {/* Projects Section - Below the fold */}
+            {/* --------------------------------------------------------------- */}
+
+            {/* Projects Section */}
             <div className="min-h-screen flex items-center justify-center py-16" id="projects">
                 <div className="w-full max-w-[800px]">
                     <section>
@@ -66,25 +64,15 @@ export default function Main() {
                         </div>
                         <ul className="space-y-8">
                             <AddProjectToList
-                                key="game-project"
                                 title="2D Isometric Roguelike Game"
-                                description={`Welcome to our 2D roguelike horror game project built in Unity! Our game features diverse map styles, from horror to
-                        ancient settings, combined with strategic spell casting and an augment system for character progression. Players will
-                        experience procedurally generated levels, fluid movement mechanics, and an immersive atmosphere through visuals and sound
-                        design. Each playthrough offers unique challenges and experiences, keeping players engaged with continuous content
-                        variety.`}
+                                description={`Welcome to our 2D roguelike horror game project built in Unity! Our game features diverse map styles, from horror to ancient settings, combined with strategic spell casting and an augment system for character progression. Players will experience procedurally generated levels, fluid movement mechanics, and an immersive atmosphere through visuals and sound design. Each playthrough offers unique challenges and experiences, keeping players engaged with continuous content variety.`}
                                 image={rove}
                                 link="https://github.com/UNLV-CS472-672/2024-S-GROUP2-2DRove"
                                 linkName="GitHub"
                             />
                             <AddProjectToList
-                                key="ml-project"
                                 title="ML Cosmic Mystery Competition"
-                                description={`Developed a machine learning solution for the Spaceship Titanic challenge, predicting passenger transport anomalies in an interstellar accident. 
-                        Using scikit-learn's Hist Gradient Boosting Classifier, my collegue and I engineered features and optimized the model to achieve 81.32% validation accuracy. 
-                        The project involved extensive data preprocessing, feature engineering, and model tuning, resulting in a top 150 placement (#141) on the Kaggle 
-                        leaderboard. This project demonstrated practical applications of machine learning in analyzing complex passenger data patterns and contributing 
-                        to theoretical rescue strategy development.`}
+                                description={`Developed a machine learning solution for the Spaceship Titanic challenge, predicting passenger transport anomalies in an interstellar accident. Using scikit-learn's Hist Gradient Boosting Classifier, my collegue and I engineered features and optimized the model to achieve 81.32% validation accuracy. The project involved extensive data preprocessing, feature engineering, and model tuning, resulting in a top 150 placement (#141) on the Kaggle leaderboard. This project demonstrated practical applications of machine learning in analyzing complex passenger data patterns and contributing to theoretical rescue strategy development.`}
                                 image="https://storage.googleapis.com/kaggle-media/competitions/Spaceship%20Titanic/joel-filipe-QwoNAhbmLLo-unsplash.jpg"
                                 link="https://github.com/Intensifiesx/Spaceship-Titanic"
                                 linkName="GitHub"

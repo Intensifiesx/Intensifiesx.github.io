@@ -28,7 +28,12 @@ function AppContent() {
 
 export default function App() {
     return (
-        <HashRouter>
+        <HashRouter
+            future={{
+                v7_relativeSplatPath: true, // Enable the future flag
+                v7_startTransition: true, // Enable the future flag
+            }}
+        >
             <AppContent />
         </HashRouter>
     );
